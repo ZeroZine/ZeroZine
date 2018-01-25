@@ -1,5 +1,5 @@
-# Revista EHN
-Revista EHN
+# Revista EHN (proyecto comunitario)
+Repositorio oficial.
 
 * Cada artículo tendrá su propia carpeta
   - Por ejemplo: *edicion1/TEMA/articulo.md*

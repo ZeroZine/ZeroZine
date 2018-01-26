@@ -1,6 +1,8 @@
 # Revista EHN (proyecto comunitario)
 Repositorio oficial.
 
+Para cualquier duda ir a la sección de la Wiki (donde también aparece la informacin de contacto).
+
 * Cada artículo tendrá su propia carpeta
   - Por ejemplo: *edicion1/TEMA/articulo.md*
 * Las imagenes irán dentro de la propia carpeta también

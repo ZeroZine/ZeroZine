@@ -85,6 +85,8 @@ Pero esto es super cutre, y veréis porqué:
 
 ![...](https://i.gyazo.com/b27ab22c9a5fa90e6326dcb2cfcb5bf5.png)
 
+**PD:** Y sí, lo que estáis viendo es una imagen en una consola. En la [segunda parte](https://github.com/z3nth10n/ZeroZine/blob/master/edicion1/zenth10n/2-captchas/2-Integrando%20una%20captcha%20a%20WinForms%20o%20a%20una%20Consola.md) explicaré como lo he hecho.
+
 Sí, en ciertos casos, incluso en diccionarios online tenemos super extensas listas de resumenes md5 ya a nuestra disposición e incluso con una combinación de 37 caracteres con 5 posiciones de longitud nos da unos 37^5 (69.343.957) posibles soluciones por fuerza bruta, lo cual con la velocidad de computación de los ordenadores que tenemos hoy se resolvería en un abrir y cerrar de ojos. Hagamos cuentas:
 
 	$time_start = microtime(true);
@@ -119,6 +121,8 @@ Sí, en ciertos casos, incluso en diccionarios online tenemos super extensas lis
 
 	echo (int)((microtime(true) - $time_start) * 1000);
 
+El código lo hemos sacado de aquí: http://www.onlinecode.org/generate-string-aaaa-9999-using-php-code/
+
 Ocupa un espacio de 4102 KB (lógico, ya que son 5 caracteres de la captcha, 3 para separar, y 32 del md5, más el salto de linea, en total 41 caracteres * 100.000, nos dan unos 4,1M bytes a KB = 4.100.000 b / 1024 = 4003KB).
 
 De media el script tarda unos 170 ms en generar 100.000 keys, lo que nos da una tasa de 588235 hashes/sec.
@@ -137,7 +141,7 @@ Aún así con ese hashrate, las 37^5 posibilidades se calcularían en unos 117 s
 
 ¿Quizás sea más rápido almacenar en una tabla MySQL? No lo sé.
 
-Vuelta al meollo, como vemos, md5 es nada a la hora de la seguirdad. También podríamos probar a generar certificados en PHP con esta [maravillosa librería](https://github.com/phpseclib/phpseclib) y enciptar la clave en vez de con md5 con una clave privada.
+Vuelta al meollo, como vemos, md5 es nada a la hora de la seguridad. También podríamos probar a generar certificados en PHP con esta [maravillosa librería](https://github.com/phpseclib/phpseclib) y enciptar la clave en vez de con md5 con una clave privada.
 
 http://phpseclib.sourceforge.net/rsa/2.0/examples.html
 
@@ -151,4 +155,4 @@ No voy a implementar todo eso ahora mismo, pero se puede hacer de forma fácil. 
 
 Y ya, pues según donde tengamos cliente hacer una u otra cosa.
 
-Proseguiremos, la segunda parte en una consola la cual es capaz de volcar la imagen la captcha directamente en ella, y haremos otros cuantos experimentos.
+Proseguiremos la segunda parte en [una consola la cual es capaz de volcar la imagen la captcha directamente en ella](https://github.com/z3nth10n/ZeroZine/blob/master/edicion1/zenth10n/2-captchas/2-Integrando%20una%20captcha%20a%20WinForms%20o%20a%20una%20Consola.md), y haremos otros cuantos experimentos.

@@ -130,3 +130,26 @@ Obtenemos la solución de la sesión (si todo ha ido bien ese valor deería no s
 Esta parte `echo md5($input) === $secret;` ha cambiado por esta `echo $input === $secret;`.
 
 Y con todo esto, ya tendremos asegurado un buen sistema captcha, antgiguo y obsoleto, pero que nos brindará algo de seguridad.
+
+Esto es el resultado (si hemos escrito bien el resultado):
+
+![...](https://i.gyazo.com/a2bf8fbfff5fdaae1236645ce9155880.png)
+
+Para el caso de que no sea válida:
+
+![...](https://i.gyazo.com/1abc7bcb13c84e958d7031d416e6dc86.png)
+
+Con ese resultado (`string`) casteado a `JObject` podremos determinar si hemos escrito bien o mal la captcha:
+
+    JObject obj = JsonConvert.DeserializeObject<JObject>(Helpers.SolveCaptcha());
+
+    try
+    {
+        Console.WriteLine("Has escrito {0} la captcha", (bool)obj["data"]["valid"] ? "BIEN" : "MAL");
+    }
+    catch
+    {
+        Console.WriteLine("Ha habido un error por parte del servidor: {0}", obj.ToString());
+    }
+
+![...](https://i.gyazo.com/a8d89daab728fc417f5c2e5aec510bcd.png)

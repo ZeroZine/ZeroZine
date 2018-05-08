@@ -1,0 +1,3 @@
+En este artículo os explicaré como usar nuestro propio sistema de captchas (el cual está desfasado porque Google tiene uno más avanzado el cual no dispone de texto si no de una casilla la cual verifica si somos un humano según los movimientos que hagamos con nuestro cursor) de texto para integrarlas a WinForms o a una consola por tal de hacer pruebas.
+
+Lo primero que necesitamos es un hosting (si tiene HTTPS mucho mejor)
